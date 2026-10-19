@@ -1,0 +1,9 @@
+# Netlify configuration file for abi_portfolio
+[build]
+  # Publish the root directory containing index.html, style.css, main.js, and profile.jpg
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

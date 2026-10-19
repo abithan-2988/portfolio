@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abithan T | Aspiring Game Developer</title>
+  <meta name="description"
+    content="Personal portfolio of Abithan T — Aspiring Game Developer, C++ Learner, and CS Student at Dr. Mahalingam College. Passionate about building games from the ground up." />
+  <meta name="keywords" content="Abithan T, Game Developer, C++, Portfolio, CS Student, Game Development" />
+  <meta name="author" content="Abithan T" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Matrix Rain Canvas -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Scanline Overlay -->
+  <div class="scanlines"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">ABITHAN.DEV</span>
+        <span class="logo-bracket">]</span>
+        <span class="blink-cursor">_</span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link" data-label="00">./home</a></li>
+        <li><a href="#about" class="nav-link" data-label="01">./about</a></li>
+        <li><a href="#skills" class="nav-link" data-label="02">./skills</a></li>
+        <li><a href="#projects" class="nav-link" data-label="03">./library</a></li>
+        <li><a href="#contact" class="nav-link" data-label="04">./contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-avatar" id="nav-avatar">
+        <img src="profile.jpg" alt="Abithan T" class="nav-avatar-img" />
+        <span class="nav-avatar-online"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="terminal-window">
+        <div class="terminal-bar">
+          <span class="t-btn t-close"></span>
+          <span class="t-btn t-minimize"></span>
+          <span class="t-btn t-maximize"></span>
+          <span class="terminal-title">guest@abithan-portfolio ~ </span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="term-line">
+            <span class="term-prompt">$ </span>
+            <span class="term-cmd typed" id="term-cmd-1">whoami</span>
+          </div>
+          <div class="term-output hidden" id="term-out-1">
+            <p><span class="hl-green">ABITHAN T</span> — Aspiring Game Developer</p>
+          </div>
+          <div class="term-line hidden" id="term-line-2">
+            <span class="term-prompt">$ </span>
+            <span class="term-cmd" id="term-cmd-2">cat mission.txt</span>
+          </div>
+          <div class="term-output hidden" id="term-out-2">
+            <p><span class="hl-dim">&gt;</span> CS Student @ Dr. Mahalingam College</p>
+            <p><span class="hl-dim">&gt;</span> Building foundations in <span class="hl-green">C++</span></p>
+            <p><span class="hl-dim">&gt;</span> Goal: Design &amp; develop games from the ground up</p>
+          </div>
+          <div class="term-line hidden" id="term-line-3">
+            <span class="term-prompt">$ </span>
+            <span class="term-cursor-block">█</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-badge-row">
+        <span class="badge">C++ Learner</span>
+        <span class="badge">CS Student</span>
+        <span class="badge">Game Dev Enthusiast</span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary" id="hero-cta-btn">
+          <span class="btn-icon">&#9654;</span> View Game Library
+        </a>
+        <a href="#contact" class="btn-secondary" id="hero-contact-btn">
+          <span class="btn-icon">&#62;</span> Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-profile-wrap">
+      <div class="profile-frame" id="profile-frame">
+        <div class="profile-scan"></div>
+        <div class="profile-corner tl"></div>
+        <div class="profile-corner tr"></div>
+        <div class="profile-corner bl"></div>
+        <div class="profile-corner br"></div>
+        <div class="profile-hud">
+          <span class="hud-id">ID: ABITHAN_T</span>
+          <span class="hud-status">● ONLINE</span>
+        </div>
+      </div>
+      <div class="profile-glow-ring"></div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 01</span>
+        <h2 class="section-title">ABOUT<span class="hl-green">_ME</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-bio-card">
+          <div class="card-header">
+            <span class="card-icon">&#9608;</span>
+            <span class="card-title">player_profile.json</span>
+          </div>
+          <div class="card-body">
+            <div class="json-block">
+              <pre>{
+  <span class="json-key">"name"</span>: <span class="json-str">"Abithan T"</span>,
+  <span class="json-key">"role"</span>: <span class="json-str">"Aspiring Game Developer"</span>,
+  <span class="json-key">"college"</span>: <span class="json-str">"Dr. Mahalingam College"</span>,
+  <span class="json-key">"focus"</span>: <span class="json-str">"C++ &amp; Game Dev"</span>,
+  <span class="json-key">"status"</span>: <span class="json-green">"ACTIVELY LEARNING"</span>
+}</pre>
+            </div>
+            <p class="bio-text">
+              I'm a Computer Science student at Dr. Mahalingam College, passionate about game development.
+              I'm currently building my foundation in <strong>C++</strong>, with the goal of designing and
+              developing games from the ground up.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <div class="traits-card">
+            <div class="card-header">
+              <span class="card-icon">&#9632;</span>
+              <span class="card-title">character_traits[]</span>
+            </div>
+            <div class="traits-list">
+              <div class="trait-item" id="trait-1">
+                <span class="trait-icon">&#9670;</span>
+                <span class="trait-label">Problem Solver</span>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="--w:88%"></div>
+                </div>
+              </div>
+              <div class="trait-item" id="trait-2">
+                <span class="trait-icon">&#9670;</span>
+                <span class="trait-label">Continuous Learner</span>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="--w:95%"></div>
+                </div>
+              </div>
+              <div class="trait-item" id="trait-3">
+                <span class="trait-icon">&#9670;</span>
+                <span class="trait-label">Detail Oriented</span>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="--w:82%"></div>
+                </div>
+              </div>
+              <div class="trait-item" id="trait-4">
+                <span class="trait-icon">&#9670;</span>
+                <span class="trait-label">Passionate Gamer</span>
+                <div class="trait-bar">
+                  <div class="trait-fill" style="--w:100%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mission-card">
+            <div class="card-header">
+              <span class="card-icon">&#9650;</span>
+              <span class="card-title">mission_statement.log</span>
+            </div>
+            <div class="card-body">
+              <p class="mission-text">
+                <span class="hl-green">&gt;&gt;&gt;</span> To grow into a skilled game developer by mastering
+                core programming and game design principles, <span class="hl-green">one project at a time.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 02</span>
+        <h2 class="section-title">SKILL<span class="hl-green">_TREE</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Languages -->
+        <div class="skill-node" id="skill-lang">
+          <div class="skill-node-header">
+            <span class="node-icon">&#60;/&#62;</span>
+            <span class="node-title">LANGUAGES</span>
+            <span class="node-tag">active</span>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">C++</span>
+                <span class="skill-level level-learning">LEARNING</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="--target: 30%" data-pct="30"></div>
+              </div>
+              <span class="skill-pct">30%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-node" id="skill-tools">
+          <div class="skill-node-header">
+            <span class="node-icon">&#9881;</span>
+            <span class="node-title">TOOLS</span>
+            <span class="node-tag">equipped</span>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">VS Code</span>
+                <span class="skill-level level-active">ACTIVE</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="--target: 70%" data-pct="70"></div>
+              </div>
+              <span class="skill-pct">70%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Focus Areas -->
+        <div class="skill-node skill-node-wide" id="skill-focus">
+          <div class="skill-node-header">
+            <span class="node-icon">&#9651;</span>
+            <span class="node-title">FOCUS AREAS</span>
+            <span class="node-tag">in-progress</span>
+          </div>
+          <div class="focus-tags">
+            <span class="focus-tag" id="focus-1">Game Development Fundamentals</span>
+            <span class="focus-tag" id="focus-2">Problem Solving</span>
+            <span class="focus-tag" id="focus-3">DSA Basics</span>
+            <span class="focus-tag" id="focus-4">Object Oriented Programming</span>
+            <span class="focus-tag" id="focus-5">Game Loop Architecture</span>
+          </div>
+        </div>
+
+        <!-- Unlocking soon -->
+        <div class="skill-node skill-locked" id="skill-locked">
+          <div class="skill-node-header">
+            <span class="node-icon">&#128274;</span>
+            <span class="node-title">NEXT UNLOCK</span>
+            <span class="node-tag locked">locked</span>
+          </div>
+          <div class="locked-items">
+            <div class="locked-item">&#9632; Game Engine (SDL2 / Unreal)</div>
+            <div class="locked-item">&#9632; Linear Algebra for Games</div>
+            <div class="locked-item">&#9632; GLSL / Shaders</div>
+          </div>
+          <div class="lock-overlay">
+            <span class="lock-icon">&#128274;</span>
+            <span>COMING SOON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 03</span>
+        <h2 class="section-title">GAME<span class="hl-green">_LIBRARY</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="library-terminal">
+        <div class="terminal-bar">
+          <span class="t-btn t-close"></span>
+          <span class="t-btn t-minimize"></span>
+          <span class="t-btn t-maximize"></span>
+          <span class="terminal-title">game_library — list-all</span>
+        </div>
+        <div class="library-body">
+          <div class="lib-cmd-row">
+            <span class="term-prompt">$ </span>
+            <span>list-games --filter=all --sort=status</span>
+          </div>
+          <div class="lib-status-row">
+            <span class="status-label">STATUS:</span>
+            <span class="status-badge status-learning">&#9679; CURRENTLY LEARNING</span>
+          </div>
+
+          <div class="game-card" id="game-card-wip">
+            <div class="game-card-header">
+              <div class="game-id">[GAME_001]</div>
+              <div class="game-title">Foundation Build</div>
+              <div class="game-status status-wip">WIP</div>
+            </div>
+            <div class="game-card-body">
+              <p class="game-desc">
+                Actively building my foundation in <span class="hl-green">C++</span> and core programming
+                concepts. Projects are in progress — coming soon.
+              </p>
+              <div class="game-meta">
+                <span class="meta-item"><span class="meta-key">ENGINE:</span> C++ (Native)</span>
+                <span class="meta-item"><span class="meta-key">STATUS:</span> Building</span>
+                <span class="meta-item"><span class="meta-key">ETA:</span> TBD</span>
+              </div>
+            </div>
+            <div class="game-card-footer">
+              <div class="progress-track">
+                <div class="progress-bar-animated"></div>
+              </div>
+              <span class="progress-label">LOADING...</span>
+            </div>
+          </div>
+
+          <div class="coming-soon-grid">
+            <div class="cs-slot" id="cs-slot-1">
+              <div class="cs-icon">&#63;</div>
+              <div class="cs-label">UNLOCKS SOON</div>
+            </div>
+            <div class="cs-slot" id="cs-slot-2">
+              <div class="cs-icon">&#63;</div>
+              <div class="cs-label">UNLOCKS SOON</div>
+            </div>
+            <div class="cs-slot" id="cs-slot-3">
+              <div class="cs-icon">&#63;</div>
+              <div class="cs-label">UNLOCKS SOON</div>
+            </div>
+          </div>
+
+          <div class="lib-footer-row">
+            <span class="term-prompt">$ </span>
+            <span class="lib-footer-text">1 active build &bull; 3 slots unlocking &bull; Watch this space</span>
+            <span class="blink-cursor">_</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== QUOTE ==================== -->
+  <section id="quote">
+    <div class="container">
+      <div class="quote-block">
+        <div class="quote-marks">&ldquo;</div>
+        <blockquote class="quote-text" id="quote-text">
+          Every great game starts with a single line of code.
+        </blockquote>
+        <div class="quote-marks quote-close">&rdquo;</div>
+        <div class="quote-source">— Abithan T</div>
+        <div class="quote-scan-line"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// 04</span>
+        <h2 class="section-title">CONTACT<span class="hl-green">_INIT</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-terminal">
+          <div class="terminal-bar">
+            <span class="t-btn t-close"></span>
+            <span class="t-btn t-minimize"></span>
+            <span class="t-btn t-maximize"></span>
+            <span class="terminal-title">contact_init.sh</span>
+          </div>
+          <div class="contact-body">
+            <p class="contact-intro">
+              <span class="term-prompt">$ </span>
+              <span class="typed-text" id="contact-cmd">ping abithan --open-channel</span>
+            </p>
+            <div class="contact-links">
+              <a href="mailto:abithanthaveethu2988@gmail.com" class="contact-link" id="link-email">
+                <span class="contact-link-icon">&#9993;</span>
+                <div class="contact-link-info">
+                  <span class="contact-link-label">EMAIL</span>
+                  <span class="contact-link-value">abithanthaveethu2988@gmail.com</span>
+                </div>
+                <span class="contact-arrow">&#8594;</span>
+              </a>
+              <a href="https://github.com/abithan-2988" target="_blank" rel="noopener noreferrer" class="contact-link"
+                id="link-github">
+                <span class="contact-link-icon">&#9672;</span>
+                <div class="contact-link-info">
+                  <span class="contact-link-label">GITHUB</span>
+                  <span class="contact-link-value">github.com/abithan-2988</span>
+                </div>
+                <span class="contact-arrow">&#8594;</span>
+              </a>
+              <a href="tel:+918637411918" class="contact-link" id="link-phone">
+                <span class="contact-link-icon">&#9742;</span>
+                <div class="contact-link-info">
+                  <span class="contact-link-label">PHONE</span>
+                  <span class="contact-link-value">+91 8637411918</span>
+                </div>
+                <span class="contact-arrow">&#8594;</span>
+              </a>
+            </div>
+            <div class="contact-status">
+              <span class="status-dot blink-dot"></span>
+              <span>Open to collaborations &amp; learning opportunities</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-panel">
+          <div class="info-card" id="info-response">
+            <span class="info-label">&#9654; RESPONSE TIME</span>
+            <span class="info-value">Within 24 hours</span>
+          </div>
+          <div class="info-card" id="info-available">
+            <span class="info-label">&#9654; AVAILABILITY</span>
+            <span class="info-value">Open to connect</span>
+          </div>
+          <div class="info-card" id="info-collab">
+            <span class="info-label">&#9654; COLLABORATION</span>
+            <span class="info-value">Learning projects &amp; teams welcome</span>
+          </div>
+          <div class="pixel-art-contact" aria-hidden="true">
+            <div class="pac-row">
+              <div class="pac-dot"></div>
+              <div class="pac-dot"></div>
+              <div class="pac-dot"></div>
+              <div class="pac-man" id="pac-man">&#9654;</div>
+              <div class="pac-dot"></div>
+              <div class="pac-dot"></div>
+              <div class="pac-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">ABITHAN.DEV</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-copy">
+        &copy; 2024 Abithan T &mdash; Built with <span class="hl-green">&lt;/&gt;</span> &amp; passion
+      </p>
+      <div class="footer-nav">
+        <a href="#hero">home</a>
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#projects">library</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
